@@ -1,0 +1,16 @@
+{
+  "name": "online-pizza-store",
+  "version": "1.0.0",
+  "description": "Online pizza",
+  "main": "index.js",
+  "scripts": {
+    "test": "\u001b[A\u001b[B"
+  },
+  "author": "jeevan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.3"
+  }
+}
