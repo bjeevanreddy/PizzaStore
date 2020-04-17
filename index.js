@@ -1,6 +1,6 @@
 const express= require('express');
 const mongoose= require('mongoose');
-
+const config= require('./config')
 var bodyParser = require('body-parser');
 
 const app=express();
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use('/customer',customerroute);
 
-mongoose.connect('mongodb://localhost:27017/PizzaStore',{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },(err)=>{
+mongoose.connect(config.mongourl,{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },(err)=>{
     console.log("Database Connection Success");
     if(err)
     {
