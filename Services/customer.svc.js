@@ -1,18 +1,17 @@
-const customermodel= require('../models/customer');
+const customermodel = require('../models/customer');
 
-const customersvc= {
-     InsertCustomer: function(data){
+const customersvc = {
+    InsertCustomer: function (data) {
         let customer = new customermodel(data);
         return customer.save();
     },
-    findmail: function(mail){
-        return customermodel.findOne({email:mail}).exec();
+    findmail: function (mail) {
+        return customermodel.findOne({ email: mail }).exec();
     },
-    finduser: function(name)
-    {
-        return customermodel.findOne({username:name}).exec();
+    finduser: function (name) {
+        return customermodel.findOne({ username: name }).exec();
     }
 }
 
-module.exports= customersvc;
+module.exports = customersvc;
 
