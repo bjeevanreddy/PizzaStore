@@ -6,10 +6,12 @@ var bodyParser = require('body-parser');
 const app=express();
 
 const customerroute=require('./routes/customer.route');
+const dishroute=require('./routes/dishes.route');
 
 app.use(bodyParser.json());
 
 app.use('/customer',customerroute);
+app.use('/products',dishroute);
 
 mongoose.connect(config.mongourl,{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },(err)=>{
     console.log("Database Connection Success");
