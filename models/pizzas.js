@@ -9,7 +9,7 @@ const pizzaSchema=mongoose.Schema({
         type:String
     },
     images:{
-        type:[Array]
+        type:[String] 
     },
     description:{
         type:String
@@ -17,14 +17,26 @@ const pizzaSchema=mongoose.Schema({
     reviews:{
         type:[Object]
     },
-    featured:{
-        type:Boolean
+    featuredProduct:{
+        type:Number,
+        default:1
+    },
+    addedTime:{
+        type:Date,
+        default:new Date().toISOString()
     },
     category:{
         type:String 
     },
     addOns:{
-        type:[Array]
+        type:[String]
+    },
+    available:{
+        type:Number,
+        default:1
+    },
+    rating:{
+        type:Number
     }
 });
 

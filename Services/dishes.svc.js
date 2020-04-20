@@ -6,6 +6,23 @@ class pizzasvc
         var pizzas=new pizzamodel(data);
         return pizzas.save();
     }
+    fetchDishes()
+    {
+       return pizzamodel.find({},{addedTime:0,__v:0}).exec();
+    }
+    featuredprod()
+    {
+        return pizzamodel.find({featuredProduct:1},{addedTime:0,__v:0}).exec();
+    }
+    filtercategoryVeg()
+    {
+        return pizzamodel.find({category:"veg"},{addedTime:0,__v:0}).exec();
+    }
+    filtercategoryNonVeg()
+    {
+        return pizzamodel.find({category:"non-veg"},{addedTime:0,__v:0}).exec();
+    }
+
 }
 
 module.exports=new pizzasvc();
