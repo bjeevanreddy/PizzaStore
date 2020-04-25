@@ -9,7 +9,7 @@ const pizzaSchema=mongoose.Schema({
         type:String
     },
     images:{
-        type:[String] 
+        type:String
     },
     description:{
         type:String

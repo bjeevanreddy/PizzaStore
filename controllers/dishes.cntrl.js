@@ -60,6 +60,24 @@ const pizzacntrl = {
         } catch (error) {
             res.send("Internal Server Error " + error).status(500);
         }
+    },
+    dishesVegNonveg: async function(req,res){
+        try{
+            let VegNon=req.params.VegNon;
+            let fid=req.params.fid;
+            let dishes=await pizzasvc.getdesiredDish(VegNon,fid);
+
+            if (dishes.length > 0) {
+                res.send(dishes).status(200);
+            }
+            else {
+                res.send("There are no Products. Try Later").status(200);
+            }
+
+        }catch(error)
+        {
+            res.send("Internal Server Error " + error).status(500);
+        }
     }
 }
 

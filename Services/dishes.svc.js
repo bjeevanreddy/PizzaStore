@@ -22,6 +22,10 @@ class pizzasvc
     {
         return pizzamodel.find({category:"non-veg"},{addedTime:0,__v:0}).exec();
     }
+    getdesiredDish(category,fid)
+    {
+        return pizzamodel.find({category:category,featuredProduct:fid},{addedTime:0,__v:0}).exec();
+    }
 
 }
 
