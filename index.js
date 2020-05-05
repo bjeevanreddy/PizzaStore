@@ -9,7 +9,7 @@ const customerroute = require('./routes/customer.route');
 const dishroute = require('./routes/dishes.route');
 
 app.use(bodyParser.json());
-
+app.use(express.static('uploads/'));
 app.use('/customer', customerroute);
 app.use('/products', dishroute);
 

@@ -21,6 +21,10 @@ const pizzacntrl = {
         try {
             let dishes = await pizzasvc.fetchDishes();
             if (dishes.length > 0) {
+                dishes.forEach(dish=>{
+                    console.log(dish.images);
+                    dish.images=`${req.protocol}://${req.get('host')}/${dish.images}`;
+                })
                 res.send(dishes).status(200);
             }
             else {
